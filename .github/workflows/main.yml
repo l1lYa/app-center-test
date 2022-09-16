@@ -1,0 +1,19 @@
+name: AppCenter Login
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Set up AppCenter
+        id: setUpAppCenter
+        run: |
+          npm install -g appcenter-cli
+          appcenter login
+          f64851811080ee61d360f457d8f97418e447ce6e
+      - name: Running UITests
+        id: runningUitests
+        run: appcenter test run uitest --app "Marcato-Partners/Outfitter-App" --devices "Marcato-Partners/apple-ipad-9-dot-7-2018" --app-path /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.iOS/artifacts/ipa2/PolarisAdventures.Outfitters.iOS.ipa --test-series "master" --locale "en_US" --build-dir /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.UITests/bin/Debug
