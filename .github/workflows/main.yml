@@ -12,8 +12,6 @@ jobs:
         id: setUpAppCenter
         run: |
           npm install -g appcenter-cli
-          appcenter login
-          93b6e4f2123331af3ebb0a57fbd68546e6915e28
       - name: Running UITests
         id: runningUitests
-        run: appcenter test run uitest --app "Marcato-Partners/Outfitter-App" --devices "Marcato-Partners/apple-ipad-9-dot-7-2018" --app-path /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.iOS/artifacts/ipa2/PolarisAdventures.Outfitters.iOS.ipa --test-series "master" --locale "en_US" --build-dir /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.UITests/bin/Debug
+        run: appcenter test run uitest --token ${{ secrets.APP_CENTER_OUTFITTER_TOKEN }} --app "Marcato-Partners/Outfitter-App" --devices "Marcato-Partners/apple-ipad-9-dot-7-2018" --app-path /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.iOS/artifacts/ipa2/PolarisAdventures.Outfitters.iOS.ipa --test-series "master" --locale "en_US" --build-dir /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.UITests/bin/Debug
