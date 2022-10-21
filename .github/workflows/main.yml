@@ -13,9 +13,9 @@ jobs:
         run: |
           script log.log
           npm install -g appcenter-cli
-          exit
       - name: Running UITests
         id: runningUitests
         run: |
-          cat log.log
+          exit
+          grep -A 100 "To address all issues" log.log
           
