@@ -11,10 +11,11 @@ jobs:
       - name: Set up AppCenter
         id: setUpAppCenter
         run: |
-          npm install -g appcenter-cli
-          tee output.log
+          npm install -g appcenter-cli | tee output.log
           pwd
       - name: Running UITests
         id: runningUitests
-        run: cat output.log
+        run: |
+          pwd
+          cat output.log
           
