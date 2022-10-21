@@ -11,10 +11,11 @@ jobs:
       - name: Set up AppCenter
         id: setUpAppCenter
         run: |
-          npm install -g appcenter-cli | tee output.log
-          pwd
+          script log.log
+          npm install -g appcenter-cli
+          exit
       - name: Running UITests
         id: runningUitests
         run: |
-          tail -n 4 output.log
+          grep -A 100 "To address all issues, run:" log.log
           
