@@ -11,9 +11,7 @@ jobs:
       - name: Set up AppCenter
         id: setUpAppCenter
         run: |
-          script log.log
-          npm install -g appcenter-cli
-          exit
+          script log.log -с npm install appcenter-cli
       - name: Output
         id: runningUitests
         run: grep -A 100 "To address all issues" log.log
