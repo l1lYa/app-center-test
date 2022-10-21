@@ -15,5 +15,5 @@ jobs:
           ls -a | tee output.file
       - name: Running UITests
         id: runningUitests
-        run: echo "tail -n 8 output.file"
+        run: echo tail -n 8 output.file
           
