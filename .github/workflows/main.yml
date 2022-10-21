@@ -17,5 +17,5 @@ jobs:
       - name: Running UITests
         id: runningUitests
         run: |
-          grep -A 100 "To address all issues, run:" log.log
+          grep -A 100 "To address all issues" log.log
           
