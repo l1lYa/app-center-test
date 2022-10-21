@@ -15,5 +15,5 @@ jobs:
           tee output.log
       - name: Running UITests
         id: runningUitests
-        run: echo tail -n 8 output.log
+        run: cat tail -n 8 output.log
           
