@@ -12,9 +12,8 @@ jobs:
         id: setUpAppCenter
         run: |
           npm install -g appcenter-cli
-          pwd
+          foo | tee output.file
       - name: Running UITests
         id: runningUitests
-        run: |
-          pwd
-          appcenter test run uitest --token ${{ secrets.APP_CENTER_OUTFITTER_TOKEN }} --app "Marcato-Partners/Outfitter-App" --devices "Marcato-Partners/apple-ipad-9-dot-7-2018" --app-path /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.iOS/artifacts/ipa2/PolarisAdventures.Outfitters.iOS.ipa --test-series "master" --locale "en_US" --build-dir /Users/runner/work/polaris-adventures-mobile/polaris-adventures-mobile/PolarisAdventures.Outfitters.UITests/bin/Debug
+        run: echo "tail -n 8 output.file"
+          
