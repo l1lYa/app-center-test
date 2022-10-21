@@ -16,5 +16,6 @@ jobs:
           exit
       - name: Running UITests
         id: runningUitests
-        run: grep -A 100 "To address all issues" log.log
+        run: |
+          cat log.log
           
