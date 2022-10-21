@@ -16,6 +16,5 @@ jobs:
       - name: Running UITests
         id: runningUitests
         run: |
-          pwd
-          cat output.log
+          tail -n 4 output.log
           
