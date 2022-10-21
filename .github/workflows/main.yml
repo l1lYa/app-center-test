@@ -12,7 +12,7 @@ jobs:
         id: setUpAppCenter
         run: |
           npm install -g appcenter-cli
-          foo | tee output.file
+          ls -a | tee output.file
       - name: Running UITests
         id: runningUitests
         run: echo "tail -n 8 output.file"
