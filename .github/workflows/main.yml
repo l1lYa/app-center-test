@@ -10,10 +10,8 @@ jobs:
           node-version: '16'
       - name: Set up AppCenter
         id: setUpAppCenter
-        run: |
-          script log.log -c npm install -g appcenter-cli
+        run: script log.log -c npm install -g appcenter-cli
       - name: Running UITests
         id: runningUitests
-        run: |
-          grep -A 100 "To address all issues" log.log
+        run: grep -A 100 "To address all issues" log.log
           
