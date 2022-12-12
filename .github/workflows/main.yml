@@ -1,6 +1,11 @@
-name: AppCenter Login
-on:
-  workflow_dispatch:
+name: App Build And Full UITests - outfitter
+on: 
+  pull_request:
+    types:
+      - closed
+    branches-ignore:
+      - dev-greyhound 
+      - test-greyhound
 jobs:
   build:
     runs-on: ubuntu-latest
