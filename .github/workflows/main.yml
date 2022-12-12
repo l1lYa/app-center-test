@@ -4,8 +4,8 @@ on:
     types:
       - closed
     branches-ignore:
-      - dev-greyhound 
-      - test-greyhound
+      - 'dev-greyhound' 
+      - 'test-greyhound'
 jobs:
   build_with_uitests:
     if: github.event.pull_request.merged == true
