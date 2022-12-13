@@ -8,7 +8,7 @@ on:
       - 'test-greyhound'
 jobs:
   build_with_uitests:
-    if: github.event.pull_request.merged == true
+    if: github.head_ref == '123' || github.head_ref == '321'
     runs-on: ubuntu-latest
     steps:
       - run: printenv | sort
