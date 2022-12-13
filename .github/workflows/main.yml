@@ -3,9 +3,12 @@ on:
   pull_request:
     types:
       - closed
+    branches-ignore:
+      - 'dev-greyhound' 
+      - 'test-greyhound'
 jobs:
   build_with_uitests:
-    if: startsWith(github.head_ref, 'greyhound/') != true && github.event.pull_request.merged == true
+    if: startsWith(github.head_ref, '!greyhound/') && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - run: printenv | sort
