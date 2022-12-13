@@ -4,10 +4,11 @@ on:
     types:
       - closed
     branches-ignore:
-      - dev-greyhound 
-      - test-greyhound
+      - 'dev-greyhound' 
+      - 'test-greyhound'
 jobs:
-  build:
+  build_with_uitests:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
